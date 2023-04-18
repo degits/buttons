@@ -1,4 +1,5 @@
 import 'package:buttons/button_1.dart';
+import 'package:buttons/button_2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,8 +33,12 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: const [
           Item(
-            detail: "Button 1",
+            detail: "Simple text button",
             button: Button1(),
+          ),
+          Item(
+            detail: "Button with background image", 
+            button: Button2(),
           ),
       ]),
     );
@@ -56,15 +61,16 @@ class Item extends StatelessWidget {
       children: [
         const Divider(),
         Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Container(
-            height: 20.0,
-            width: 100.0,
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 100, 157, 214),
               borderRadius: BorderRadius.all(Radius.circular(20.0))
             ),
-            child: Center(child: Text(detail)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: Text(detail)),
+            ),
           ),
         ),
         const Divider(),
